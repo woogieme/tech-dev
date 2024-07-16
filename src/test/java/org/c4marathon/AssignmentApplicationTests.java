@@ -1,4 +1,4 @@
-package org.c4marathon.assignment;
+package org.c4marathon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
