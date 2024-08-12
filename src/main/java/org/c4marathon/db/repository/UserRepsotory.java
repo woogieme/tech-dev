@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepsotory extends JpaRepository<User, Long> {
@@ -18,4 +19,6 @@ public interface UserRepsotory extends JpaRepository<User, Long> {
     @EntityGraph(attributePaths = "pets")
     @Query("select o from User o")
     List<User> findAllEntityGraph();
+
+    Optional<User> findByEmail(String userEmail);
 }
