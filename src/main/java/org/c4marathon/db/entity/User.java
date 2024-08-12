@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
 @Setter
 public class User {
@@ -22,9 +21,19 @@ public class User {
 
     private String name;
 
+    private String password;
+
+    private String userEmail;
+
     @BatchSize(size=5)
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    @Builder.Default
     private List<Animal> pets = new ArrayList<>();
 
+    @Builder
+    public User(Long id, String name, String password, String userEmail) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.userEmail = userEmail;
+    }
 }
