@@ -1,11 +1,8 @@
-package org.c4marathon.api.controller;
+package org.c4marathon.api.request;
 
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-import org.c4marathon.api.request.FileRequest;
-import org.c4marathon.api.response.FileResponse;
 import org.c4marathon.api.service.FileService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/file")
